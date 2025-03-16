@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 // Attractor
 // npm 
-export class AttractorObj {
+class AttractorObj {
     constructor(randomize, width, height, params) {
       this.x = 0.1;
       this.y = 0.1;
@@ -109,4 +109,4 @@ export class AttractorObj {
       // this.data[i + 3] = 255;
     }
   }
-  
+  export default AttractorObj;
