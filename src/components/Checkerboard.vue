@@ -4,7 +4,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import AttractorObj from '../modules/Attractor.js'; // Import DummyClass
+// import AttractorObj from '../modules/Attractor.js'; // Import DummyClass
 
 const width = ref(window.innerWidth);
 const height = ref(window.innerWidth); // Maintain square aspect ratio
@@ -14,7 +14,7 @@ onMounted(() => {
   const ctx = canvas.value.getContext('2d');
   const imageData = ctx.createImageData(width.value, height.value);
   const data = imageData.data;
-  const ao = new AttractorObj(); // Create an instance of DummyClass
+  // const ao = new AttractorObj(); // Create an instance of DummyClass
   // Generate random RGBA values for each pixel
   for (let i = 0; i < data.length; i += 4) {
     data[i] = Math.floor(Math.random() * 256);     // Red
