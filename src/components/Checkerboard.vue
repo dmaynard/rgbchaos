@@ -16,12 +16,20 @@ onMounted(() => {
   const data = imageData.data;
   // const ao = new AttractorObj(); // Create an instance of DummyClass
   // Generate random RGBA values for each pixel
-  for (let i = 0; i < data.length; i += 4) {
-    data[i] = Math.floor(Math.random() * 256);     // Red
-    data[i + 1] = Math.floor(Math.random() * 256); // Green
-    data[i + 2] = Math.floor(Math.random() * 256); // Blue
-    data[i + 3] = 255;                             // Alpha (fully opaque)
-  }
+  let w = width.value;
+  let size = w/8;
+  let base = 0;
+  
+  console.log( "width = ",  width.value);
+  for (let j = 0; j < height.value; j++) {
+    for (let i = 0; i < width.value; i++) {
+
+        data[base++] = Math.floor(i/size)*255/8 ;     // Red
+        data[base++] = Math.floor(j/size)*255/8 ; // Green
+        data[base++] = Math.floor(i/size)*255/8 ; // Blue
+        data[base++] = 255;                             // Alpha (fully opaque)
+     }
+}
 
   // Put the image data onto the canvas
   ctx.putImageData(imageData, 0, 0);
